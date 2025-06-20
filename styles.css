@@ -5,133 +5,149 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
-  background-color: #E0FFFF;
+  background-color: #e0ffff;
 }
 
 .cabeçalho {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 380px;
+  justify-content: center;
   border-bottom: 10px solid #838080;
-  background-color: #008B8B;
+  background-color: #008b8b;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .nome {
-  margin-top: 20px;
   color: #ffffff;
+  font-size: 2.5rem;
 }
 
 .frase {
   color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .imagem {
-  margin: 10px 0px 10px 0px;
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+  margin: 1.5rem 0;
+  width: clamp(150px, 30vw, 200px);
+  height: clamp(150px, 30vw, 200px);
+  border-radius: 50%;
   border: 10px solid #cccccc;
+  object-fit: cover;
 }
 
 .nav {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   border-radius: 1000px;
   border: 2px solid #999999;
   max-width: 500px;
-  width: 50%;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -37px;
-  background-color: #008B8B;
+  width: 90%;
+  padding: 1.25rem;
+  margin: -37px auto 0 auto;
+  background-color: #008b8b;
+  position: relative;
+  z-index: 2;
+}
+
+.nav ul,
+#extras ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
 }
 
 .color_p_nav {
   color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-#sobre_mim , #habilidades, #projetos {
+#sobre_mim,
+#habilidades,
+#projetos {
   display: flex;
   flex-direction: column;
   border: 2px solid #999999;
   border-radius: 30px;
   max-width: 900px;
-  width: 80%;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2%;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
   background-color: #ffffff;
 }
-
-/* 
-#seção, #habilidades, #projetos {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #999999;
-  border-radius: 30px;
-  width: 80%;
-  margin-top: 20px;
-  margin-left: 10%;
-  padding: 2%;
-  background-color: #ffffff;
-}
-
-*/
-
 
 h4 {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   color: #008080;
-  margin-bottom: 1.5%;
-  padding-bottom: 1%;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #999999;
-  font-size: 30px;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
 }
 
-.p_das_seções {
+.p_das_seções,
+#projetos ul {
   color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#projetos ul {
+  list-style: none;
+  list-style-position: inside;
+  padding-left: 0.5rem;
 }
 
 #extras {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   border-radius: 1000px;
   border: 2px solid #999999;
   max-width: 500px;
-  width: 50%;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: -35px;
-  background-color: #008B8B;
+  width: 90%;
+  padding: 1.25rem;
+  margin: 2rem auto;
+  background-color: #008b8b;
   position: relative;
   z-index: 2;
 }
 
 .p_de_extras {
   color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 #rodapé {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #008B8B;
+  justify-content: center;
+  background-color: #008b8b;
   border-top: 10px solid #838080;
-  height: 190px;
   position: relative;
   z-index: 1;
+  padding: 2rem 1rem 1.5rem 1rem;
+  text-align: center;
 }
 
 .email {
-  margin-top: 80px;
-  color: #E0FFFF;
+  color: #e0ffff;
+  margin-top: -10px;
 }
 
 .cor_do_email {
@@ -139,13 +155,51 @@ h4 {
 }
 
 .direitos_autorais {
-  color: #E0FFFF;
+  color: #e0ffff;
+  margin-top: 0.5rem;
 }
 
-
-
 @media screen and (max-width: 800px) {
-  body {
+  .nav,
+  #extras {
     flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: -30px;
+  }
+
+  .nav ul,
+  #extras ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #extras {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .nome {
+    font-size: 2rem;
+  }
+
+  .frase {
+    font-size: 1rem;
+  }
+
+  .email {
+    font-size: 1rem;
+  }
+
+  .direitos_autorais {
+    font-size: 1rem;
+  }
+
+  #sobre_mim,
+  #habilidades,
+  #projetos {
+    width: 95%;
+    padding: 1.5rem;
   }
 }
