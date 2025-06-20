@@ -111,6 +111,11 @@ h4 {
   padding-left: 0.5rem;
 }
 
+.link_do_projeto {
+  color: #008080;
+  text-decoration: none;
+}
+
 #extras {
   display: flex;
   justify-content: space-evenly;
